@@ -1,5 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { getAllCars } from './operations';
+// import { createSlice } from '@reduxjs/toolkit';
+// import { getAllCars } from './operations';
 
 // export const carSlice = createSlice({
 //   name: 'cars',
