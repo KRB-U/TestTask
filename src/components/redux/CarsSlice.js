@@ -7,8 +7,8 @@ export const carSlice = createSlice({
     cars: [],
     favorite: [],
     filters: {
-      brand: '',
-      pricePerHour: 0,
+      make: '',
+      pricePerHour: '',
       minMileage: 0,
       maxMileage: 0,
     },
@@ -32,6 +32,10 @@ export const carSlice = createSlice({
     nextPage(state, action) {
       state.pagination.page = state.pagination.page + action.payload;
     },
+
+    updateFilter(state, action) {
+      state.filters = action.payload;
+    },
   },
 
   extraReducers: builder => {
@@ -51,4 +55,5 @@ export const carSlice = createSlice({
 });
 
 export const carsReduser = carSlice.reducer;
-export const { addFavorite, delFavorite, nextPage } = carSlice.actions;
+export const { addFavorite, delFavorite, nextPage, updateFilter } =
+  carSlice.actions;

@@ -1,24 +1,29 @@
 import { Formik, Form, Field } from 'formik';
 import filterBrandsOptions from '../../assets/makes.json';
 import filterPricesOptions from '../../assets/price.json';
+import { updateFilter } from 'components/redux/CarsSlice';
+import { useDispatch } from 'react-redux';
 
-function CarFilter({ handleFilter }) {
+function CarFilter() {
+  const dispatch = useDispatch();
+
   return (
     <Formik
       initialValues={{
         make: '',
-        price: '',
-        minMileage: '',
-        maxMileage: '',
+        pricePerHour: '',
+        minMileage: 0,
+        maxMileage: 0,
       }}
       onSubmit={values => {
-        handleFilter(values);
+        // handleFilter(values);A
+        dispatch(updateFilter(values));
       }}
     >
       <Form>
         <label htmlFor="make">Car brand</label>
-        <Field as="select" name="make" id="make" placeholder="Enter the text">
-          <option value="">All</option>
+        <Field as="select" name="make" id="make">
+          <option value="">Enter the text</option>
           {filterBrandsOptions.map(make => (
             <option key={make} value={make}>
               {make}
@@ -26,9 +31,9 @@ function CarFilter({ handleFilter }) {
           ))}
         </Field>
 
-        <label htmlFor="price">Price/ 1 hour</label>
-        <Field as="select" name="price" id="price" placeholder="To $">
-          <option value="">All</option>
+        <label htmlFor="pricePerHour">Price/ 1 hour</label>
+        <Field as="select" name="pricePerHour" id="pricePerHour">
+          <option value="">To $</option>
           {filterPricesOptions.map(price => (
             <option key={price} value={price}>
               {price}
