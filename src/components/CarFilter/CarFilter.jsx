@@ -16,7 +16,6 @@ function CarFilter() {
         maxMileage: 0,
       }}
       onSubmit={values => {
-        // handleFilter(values);A
         dispatch(updateFilter(values));
       }}
     >

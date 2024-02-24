@@ -33,7 +33,6 @@ function Catalog() {
 
   return (
     <div>
-      {/* <CarFilter handleFilter={handleFilter} /> */}
       <CarFilter />
       {cars.map(car => (
         <CarCard key={car.id} car={car} />
