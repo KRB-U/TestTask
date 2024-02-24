@@ -12,6 +12,9 @@ export const carSlice = createSlice({
       minMileage: 0,
       maxMileage: 0,
     },
+    pagination: {
+      page: 1,
+    },
     isLoading: false,
     error: null,
   },
@@ -25,6 +28,10 @@ export const carSlice = createSlice({
         item => item.id !== action.payload
       );
     },
+
+    nextPage(state, action) {
+      state.pagination.page = state.pagination.page + action.payload;
+    },
   },
 
   extraReducers: builder => {
@@ -34,7 +41,7 @@ export const carSlice = createSlice({
       })
       .addCase(getAllCars.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.cars = [...action.payload];
+        state.cars = [...state.cars, ...action.payload];
       })
       .addCase(getAllCars.rejected, (state, action) => {
         state.isLoading = false;
@@ -44,4 +51,4 @@ export const carSlice = createSlice({
 });
 
 export const carsReduser = carSlice.reducer;
-export const { addFavorite, delFavorite } = carSlice.actions;
+export const { addFavorite, delFavorite, nextPage } = carSlice.actions;

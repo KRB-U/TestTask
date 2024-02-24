@@ -32,7 +32,7 @@ function CarCard({ car }) {
   return (
     <div>
       <a onClick={checkFavorite}>
-        <FavHeart isFavorite={isFavorite} />
+        <FavHeart $isFavorite={isFavorite} />
       </a>
       <img src={car.img || car.photoLink} alt={car.make} />
       <h3>
