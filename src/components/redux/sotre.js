@@ -1,25 +1,34 @@
-// import { configureStore } from '@reduxjs/toolkit';
-// import { carsReduser } from './CarsSlice';
+import { configureStore } from '@reduxjs/toolkit';
+import { carsReduser } from './CarsSlice';
 
-// import { persistStore, persistReducer } from 'redux-persist';
-// import storage from 'redux-persist/lib/storage';
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import {
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from 'redux-persist';
 
-// export const store = configureStore({
-//   reducer: { cars: carsReduser },
-// });
+import persistStore from 'redux-persist/es/persistStore';
 
-// import rootReducer from './reducers';
+const persistConfig = {
+  key: 'cars',
+  storage,
+  whitelist: ['filters', 'favorite'],
+};
 
-// const persistConfig = {
-//   key: 'root',
-//   storage,
-//   whiteList: ['favorites'],
-// };
+export const store = configureStore({
+  reducer: { cars: persistReducer(persistConfig, carsReduser) },
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
+  devTools: process.env.NODE_ENV === 'development',
+});
 
-// const persistedReducer = persistReducer(persistConfig, rootReducer);
-
-// export default () => {
-//   let store = createStore(persistedReducer);
-//   let persistor = persistStore(store);
-//   return { store, persistor };
-// };
+export const persistor = persistStore(store);

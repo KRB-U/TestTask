@@ -27,7 +27,7 @@ function CarFilter({ handleFilter }) {
         </Field>
 
         <label htmlFor="price">Price/ 1 hour</label>
-        <Field as="select" name="price" id="price">
+        <Field as="select" name="price" id="price" placeholder="To $">
           <option value="">All</option>
           {filterPricesOptions.map(price => (
             <option key={price} value={price}>

@@ -1,29 +1,7 @@
-// [
-//   'Buick',
-//   'Volvo',
-//   'HUMMER',
-//   'Subaru',
-//   'Mitsubishi',
-//   'Nissan',
-//   'Lincoln',
-//   'GMC',
-//   'Hyundai',
-//   'MINI',
-//   'Bentley',
-//   'Mercedes-Benz',
-//   'Aston Martin',
-//   'Pontiac',
-//   'Lamborghini',
-//   'Audi',
-//   'BMW',
-//   'Chevrolet',
-//   'Mercedes-Benz',
-//   'Chrysler',
-//   'Kia',
-//   'Land',
-// ];
+export const selectCars = state => state.cars.cars;
+export const selectFavorite = state => state.cars.favorite;
 
-// export const selectorCars = state => state.carsArray;
-// export const selectorFilters = state => state.filters;
-// export const selectorLoading = state => state.isLoading;
-// export const selectorError = state => state.error;
+export const selectFilters = state => state.cars.filters;
+
+export const selectorLoading = state => state.cars.isLoading;
+export const selectorError = state => state.cars.error;

@@ -1,8 +1,10 @@
 import { LearnMore } from 'components/buttons/LearnMore/LearnMore';
-// import placeholderImage from '../../assets/car-placeholder.png';
 import ModalCarDetail from 'components/Modal/ModalCarDetail';
 import { useState } from 'react';
 import { FavHeart } from './CarCard.styled';
+import { useDispatch, useSelector } from 'react-redux';
+import { addFavorite, delFavorite } from 'components/redux/CarsSlice';
+import { selectFavorite } from 'components/redux/selectors';
 
 function CarCard({ car }) {
   const addressParts = car.address.split(',');
@@ -10,24 +12,28 @@ function CarCard({ car }) {
   const country = addressParts[2].trim();
 
   const [showModal, setShowModal] = useState(false);
-  const [favorites, setFavorites] = useState([]);
 
-  const toggleFavorite = () => {
-    if (favorites.includes(car)) {
-      setFavorites(favorites.filter(favorite => favorite !== car));
-      localStorage.setItem(
-        'favorites',
-        JSON.stringify(favorites.filter(favorite => favorite !== car))
-      );
+  const [isFavorite, setFavorite] = useState(false);
+
+  const dispatch = useDispatch();
+
+  const favorite = useSelector(selectFavorite);
+
+  const checkFavorite = () => {
+    if (favorite.some(item => item.id === car.id)) {
+      dispatch(delFavorite(car.id));
+      setFavorite(false);
     } else {
-      setFavorites([...favorites, car]);
-      localStorage.setItem('favorites', JSON.stringify([...favorites, car]));
+      dispatch(addFavorite(car));
+      setFavorite(true);
     }
   };
 
   return (
     <div>
-      {<FavHeart onClick={toggleFavorite} />}
+      <a onClick={checkFavorite}>
+        <FavHeart isFavorite={isFavorite} />
+      </a>
       <img src={car.img || car.photoLink} alt={car.make} />
       <h3>
         {car.make} {car.model}, {car.year}

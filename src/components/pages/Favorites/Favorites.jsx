@@ -1,17 +1,9 @@
 import CarCard from 'components/CarCard/CarCard';
-import { useEffect, useState } from 'react';
+import { selectFavorite } from 'components/redux/selectors';
+import { useSelector } from 'react-redux';
 
 function Favorites() {
-  const [favorites, setFavorites] = useState([]);
-
-  useEffect(() => {
-    const item = JSON.parse(localStorage.getItem('favorites'));
-    setFavorites(item);
-  }, []);
-
-  if (!favorites) {
-    return;
-  }
+  const favorites = useSelector(selectFavorite);
 
   return (
     <div>

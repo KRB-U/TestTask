@@ -3,33 +3,36 @@ import CarCard from 'components/CarCard/CarCard';
 import { ButtonLoadMore } from 'components/buttons/LoadMore/LoadMore';
 import { fetchCars } from 'components/helpers/API';
 import { CarFilter } from 'components/CarFilter/CarFilter';
+import { useSelector } from 'react-redux';
+import { selectCars } from 'components/redux/selectors';
 
 function Catalog() {
-  const [cars, setCars] = useState([]);
-  const [page, setPage] = useState(1);
+  // const [cars, setCars] = useState([]);
+  // const [page, setPage] = useState(1);
 
   const handleLoadMore = async () => {
-    try {
-      const response = await fetchCars(page + 1, 12);
-      setCars(prevCars => [...prevCars, ...response.data]);
-      setPage(prevPage => prevPage + 1);
-    } catch (error) {
-      throw new Error(error.message);
-    }
+    // try {
+    // const response = await fetchCars(page + 1, 12);
+    // setCars(prevCars => [...prevCars, ...response.data]);
+    // setPage(prevPage => prevPage + 1);
+    // } catch (error) {
+    //   throw new Error(error.message);
+    // }
   };
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetchCars(page, 12);
-        setCars(response.data);
-      } catch (error) {
-        throw new Error(error.message);
-      }
-    };
+    // const fetchData = async () => {
+    //   try {
+    //     const response = await fetchCars(page, 12);
+    //     setCars(response.data);
+    //   } catch (error) {
+    //     throw new Error(error.message);
+    //   }
+    // };
+    // fetchData();
+  }, []);
 
-    fetchData();
-  }, [page]);
+  const cars = useSelector(selectCars);
 
   const handleFilter = values => {
     let filteredCars = [...cars];
@@ -56,7 +59,7 @@ function Catalog() {
       );
     }
 
-    setCars(filteredCars);
+    // setCars(filteredCars);
   };
 
   return (
