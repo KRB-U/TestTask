@@ -31,9 +31,9 @@ function CarCard({ car }) {
 
   return (
     <div>
-      <a onClick={checkFavorite}>
+      <buttron onClick={checkFavorite}>
         <FavHeart $isFavorite={isFavorite} />
-      </a>
+      </buttron>
       <img src={car.img || car.photoLink} alt={car.make} />
       <h3>
         {car.make} {car.model}, {car.year}

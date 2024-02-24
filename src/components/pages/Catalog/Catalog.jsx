@@ -1,9 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import {
   selectCars,
-  selectFilters,
   selectPagination,
   selectVisibleCars,
 } from 'components/redux/selectors';
@@ -19,7 +18,7 @@ function Catalog() {
   const { page } = useSelector(selectPagination);
 
   const visibleCars = useSelector(selectVisibleCars);
-  // console.log(visibleCars);
+  console.log(visibleCars);
 
   const dispatch = useDispatch();
 
@@ -30,7 +29,7 @@ function Catalog() {
 
   useEffect(() => {
     dispatch(getAllCars(page));
-  }, []);
+  }, [dispatch, page]);
 
   return (
     <div>

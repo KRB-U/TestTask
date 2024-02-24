@@ -9,21 +9,21 @@ export const selectorError = state => state.cars.error;
 
 export const selectVisibleCars = state => {
   const cars = selectCars(state);
-  const filters = selectFilters(state);
-
-  if (Object.values(filters).every(value => value === '' || value === 0)) {
-    return cars;
-  }
+  const {
+    make: makeFilter,
+    pricePerHour,
+    minMileage,
+    maxMileage,
+  } = selectFilters(state);
 
   const filteredCars = cars.filter(car => {
     const { make, rentalPrice, mileage } = car;
-    const { make: makeFilter, pricePerHour, minMileage, maxMileage } = filters;
 
     return (
-      (!makeFilter || make === makeFilter) &&
-      (!pricePerHour || rentalPrice <= pricePerHour) &&
-      (!minMileage || mileage >= minMileage) &&
-      (!maxMileage || mileage <= maxMileage)
+      (makeFilter === '' || make === makeFilter) &&
+      (pricePerHour === '' || rentalPrice <= pricePerHour) &&
+      (parseInt(minMileage) === 0 || mileage >= parseInt(minMileage)) &&
+      (parseInt(maxMileage) === 0 || mileage <= parseInt(maxMileage))
     );
   });
 
