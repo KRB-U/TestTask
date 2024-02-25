@@ -15,12 +15,12 @@ import { CarFilter } from 'components/CarFilter/CarFilter';
 import { nextPage } from 'components/redux/CarsSlice';
 
 function Catalog() {
-  const cars = useSelector(selectCars);
-  const { page } = useSelector(selectPagination);
-  const isLoading = useSelector(selectorLoading);
+  // const cars = useSelector(selectCars);
+  // const { page } = useSelector(selectPagination);
+  // const isLoading = useSelector(selectorLoading);
 
   const visibleCars = useSelector(selectVisibleCars);
-  console.log(visibleCars);
+  // console.log(visibleCars);
 
   const dispatch = useDispatch();
 

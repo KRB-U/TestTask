@@ -17,7 +17,7 @@ import persistStore from 'redux-persist/es/persistStore';
 const persistConfig = {
   key: 'cars',
   storage,
-  whitelist: ['filters', 'favorite'],
+  whitelist: ['favorite'],
 };
 
 export const store = configureStore({
