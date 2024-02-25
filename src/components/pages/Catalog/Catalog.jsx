@@ -2,10 +2,10 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import {
-  selectCars,
-  selectPagination,
+  // selectCars,
+  // selectPagination,
   selectVisibleCars,
-  selectorLoading,
+  // selectorLoading,
 } from 'components/redux/selectors';
 import { getAllCars } from 'components/redux/operations';
 
