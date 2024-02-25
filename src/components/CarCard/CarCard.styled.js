@@ -37,11 +37,14 @@ export const Img = styled.img`
   );
 `;
 
-export const CarItem = styled.ul`
+export const CarItemTitle = styled.ul`
   display: flex;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
 `;
 
-export const CarList = styled.li`
+export const CarListTitle = styled.li`
   padding-right: 10px;
 
   &:nth-child(2) {
@@ -54,11 +57,29 @@ export const CarList = styled.li`
   }
 `;
 
-export const Description = styled.ul`
-  /* display: flex; */
+export const CarItemDescr = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
 `;
 
 export const Delimiter = styled.div`
   border: 1px;
   color: rgba(18, 20, 23, 0.1);
+`;
+
+export const CarListDescr = styled.li`
+  position: relative;
+
+  &:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 80%;
+    background-color: #d9d9d9;
+    margin-left: 7px;
+  }
+  margin-right: 15px;
 `;

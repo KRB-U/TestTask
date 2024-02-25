@@ -18,7 +18,7 @@ const BtnLearMore = styled.button`
   font-style: normal;
   font-weight: 600;
 
-  width: 274px;
+  width: 270px;
   height: 44px;
 
   &:hover {

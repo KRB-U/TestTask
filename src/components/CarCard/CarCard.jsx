@@ -11,10 +11,10 @@ import {
   ButtonFav,
   Img,
   ContainerWrapper,
-  CarList,
-  Delimiter,
-  Description,
-  CarItem,
+  CarItemTitle,
+  CarListTitle,
+  CarItemDescr,
+  CarListDescr,
 } from './CarCard.styled';
 
 function CarCard({ car }) {
@@ -47,24 +47,29 @@ function CarCard({ car }) {
       </ButtonFav>
       <Img src={car.img || car.photoLink} alt={car.make} />
       <h3>
-        <CarItem>
-          <CarList>{car.make}</CarList>
-          <CarList>{car.model}</CarList>
-          <CarList>{car.year}</CarList>
-          <CarList>{car.rentalPrice}</CarList>
-        </CarItem>
+        <CarItemTitle>
+          <CarListTitle>{car.make}</CarListTitle>
+          <CarListTitle>{car.model}</CarListTitle>
+          <CarListTitle>{car.year}</CarListTitle>
+          <CarListTitle>{car.rentalPrice}</CarListTitle>
+        </CarItemTitle>
       </h3>
 
-      <Description>
-        <li>{car.type}</li>
-        <Delimiter></Delimiter>
-        <li>{city}</li>
-        <li>{country}</li>
-        <li>{car.rentalCompany}</li>
-        <li>{car.model}</li>
-        <li>{car.id}</li>
-        <li>{car.functionalities[0]}</li>
-      </Description>
+      <CarItemDescr>
+        <CarListDescr>{car.type}</CarListDescr>
+
+        <CarListDescr>{city}</CarListDescr>
+
+        <CarListDescr>{country}</CarListDescr>
+
+        <CarListDescr>{car.rentalCompany}</CarListDescr>
+
+        <CarListDescr>{car.model}</CarListDescr>
+
+        <CarListDescr>{car.id}</CarListDescr>
+
+        <CarListDescr>{car.functionalities[0]}</CarListDescr>
+      </CarItemDescr>
 
       <LearnMore onClick={() => setShowModal(true)} />
       {showModal && (
