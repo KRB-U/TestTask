@@ -1,9 +1,25 @@
-import { Formik, Form, Field } from 'formik';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import filterBrandsOptions from '../../assets/makes.json';
 import filterPricesOptions from '../../assets/price.json';
 import { updateFilter } from 'components/redux/CarsSlice';
 import { useDispatch } from 'react-redux';
 import { ContainerFilter } from './CarFilter.styled';
+import * as Yup from 'yup';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { SearchBtn } from 'components/buttons/Serach/Search';
+
+const validationSchema = Yup.object().shape({
+  maxMileage: Yup.number()
+    .min(0, 'Max mileage cannot be negative')
+    .nullable()
+    .typeError('Max mileage must be a number'),
+  minMileage: Yup.number()
+    .min(0, 'Min mileage cannot be negative')
+    .nullable()
+    .typeError('Min mileage must be a number'),
+});
 
 function CarFilter() {
   const dispatch = useDispatch();
@@ -13,9 +29,10 @@ function CarFilter() {
       initialValues={{
         make: '',
         pricePerHour: '',
-        minMileage: 0,
-        maxMileage: 0,
+        minMileage: '',
+        maxMileage: '',
       }}
+      validationSchema={validationSchema}
       onSubmit={values => {
         dispatch(updateFilter(values));
       }}
@@ -31,7 +48,6 @@ function CarFilter() {
               </option>
             ))}
           </Field>
-
           <label htmlFor="pricePerHour">Price/ 1 hour</label>
           <Field as="select" name="pricePerHour" id="pricePerHour">
             <option value="">To $</option>
@@ -41,24 +57,25 @@ function CarFilter() {
               </option>
             ))}
           </Field>
-
-          <label htmlFor="Mileage">
-            Сar mileage / km
-            <Field
-              type="number"
-              name="minMileage"
-              id="minMileage"
-              placeholder="From"
-            />
-            <Field
-              type="number"
-              name="maxMileage"
-              id="maxMileage"
-              placeholder="To"
-            />
-          </label>
-          <button type="submit">Search</button>
+          <label htmlFor="Mileage"></label>
+          Сar mileage / km
+          <Field
+            type="number"
+            name="minMileage"
+            id="minMileage"
+            placeholder="From"
+          />
+          <Field
+            type="number"
+            name="maxMileage"
+            id="maxMileage"
+            placeholder="To"
+          />
+          <ErrorMessage name="minMileage" render={msg => toast.error(msg)} />
+          <ErrorMessage name="maxMileage" render={msg => toast.error(msg)} />
+          <SearchBtn />
         </Form>
+        <ToastContainer autoClose={2000} closeOnClick />
       </ContainerFilter>
     </Formik>
   );

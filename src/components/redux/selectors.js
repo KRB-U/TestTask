@@ -18,8 +18,8 @@ export const selectVisibleCars = createSelector(
       return (
         (makeFilter === '' || make === makeFilter) &&
         (pricePerHour === '' || rentalPrice <= pricePerHour) &&
-        (parseInt(minMileage) === 0 || mileage >= parseInt(minMileage)) &&
-        (parseInt(maxMileage) === 0 || mileage <= parseInt(maxMileage))
+        (minMileage === '' || mileage >= parseInt(minMileage)) &&
+        (maxMileage === '' || mileage <= parseInt(maxMileage))
       );
     });
 

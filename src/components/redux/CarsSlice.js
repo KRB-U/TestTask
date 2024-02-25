@@ -9,8 +9,8 @@ export const carSlice = createSlice({
     filters: {
       make: '',
       pricePerHour: '',
-      minMileage: 0,
-      maxMileage: 0,
+      minMileage: '',
+      maxMileage: '',
     },
     pagination: {
       page: 1,
