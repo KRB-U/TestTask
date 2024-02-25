@@ -1,10 +1,12 @@
-import { LearnMore } from 'components/buttons/LearnMore/LearnMore';
-import ModalCarDetail from 'components/Modal/ModalCarDetail';
 import { useState } from 'react';
-import { FavHeart } from './CarCard.styled';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { addFavorite, delFavorite } from 'components/redux/CarsSlice';
 import { selectFavorite } from 'components/redux/selectors';
+
+import ModalCarDetail from 'components/Modal/ModalCarDetail';
+import { LearnMore } from 'components/buttons/LearnMore/LearnMore';
+import { FavHeart } from './CarCard.styled';
 
 function CarCard({ car }) {
   const addressParts = car.address.split(',');
@@ -51,9 +53,13 @@ function CarCard({ car }) {
       </button>
       <img src={car.img || car.photoLink} alt={car.make} />
       <h3>
-        {car.make} {car.model}, {car.year}
+        <ul>
+          <li>{car.make}</li>
+          <li>{car.model}</li>
+          <li>{car.year}</li>
+          <li>{car.rentalPrice}</li>
+        </ul>
       </h3>
-      <p>${car.rentalPrice}</p>
       <ul>
         <li>{car.type}</li>
         <li>{city}</li>
