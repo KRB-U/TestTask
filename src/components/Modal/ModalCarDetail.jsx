@@ -1,6 +1,16 @@
 import { ClsBtn } from 'components/buttons/ClsBtn/ClsBtn';
 import { RentalCar } from 'components/buttons/RentalCar/RentalCar';
 import Modal from 'react-modal';
+import {
+  ModalCarItemDescr,
+  ModalCarItemTitle,
+  ModalCarListDescr,
+  ModalCarListTitle,
+  ModalContainerWrapper,
+  ModalImg,
+  ModalRentCondItem,
+  ModalRentCondList,
+} from './ModalCarDetail.styled';
 
 Modal.setAppElement('#root');
 
@@ -17,8 +27,8 @@ function ModalCarDetail({ car, isOpen, closeModal }) {
 
   const customStyles = {
     content: {
-      width: '600px',
-      height: '400px',
+      width: '541px',
+      height: '752px',
       margin: 'auto',
     },
   };
@@ -31,46 +41,70 @@ function ModalCarDetail({ car, isOpen, closeModal }) {
       ariaHideApp={false}
       style={customStyles}
     >
-      <ClsBtn onClick={closeModal} />
-      <img src={car.img || car.photoLink} alt={car.make} />
+      <ModalContainerWrapper>
+        <ClsBtn onClick={closeModal} />
+        <ModalImg src={car.img || car.photoLink} alt={car.make} />
 
-      <h2>
-        {car.make} {car.model}, {car.year}
-      </h2>
+        <h2>
+          <ModalCarItemTitle>
+            <ModalCarListTitle>{car.make}</ModalCarListTitle>
+            <ModalCarListTitle>{car.model},</ModalCarListTitle>
+            <ModalCarListTitle>{car.year}</ModalCarListTitle>
+          </ModalCarItemTitle>
+        </h2>
 
-      <ul>
-        <li>{city}</li>
-        <li>{country}</li>
-        <li>id: {car.id}</li>
-        <li>Year: {car.year}</li>
-        <li>Type: {car.type}</li>
-        <li>Fuel Consumption: {car.fuelConsumption}</li>
-        <li>Engine Size: {car.engineSize}</li>
-      </ul>
-      <h4>{car.description}</h4>
-      <h4>Accessories and functionalities:</h4>
-      <ul>
-        {car.accessories.map((accessory, index) => (
-          <li key={index}>{accessory}</li>
-        ))}
-        {car.functionalities.map((functionality, index) => (
-          <li key={index}>{functionality}</li>
-        ))}
-      </ul>
+        <ModalCarItemDescr>
+          <ModalCarListDescr>{city}</ModalCarListDescr>
+          <ModalCarListDescr>{country}</ModalCarListDescr>
+          <ModalCarListDescr>id: {car.id}</ModalCarListDescr>
+          <ModalCarListDescr>Year: {car.year}</ModalCarListDescr>
+          <ModalCarListDescr>Type: {car.type}</ModalCarListDescr>
+          <ModalCarListDescr>
+            Fuel Consumption: {car.fuelConsumption}
+          </ModalCarListDescr>
+          <ModalCarListDescr>Engine Size: {car.engineSize}</ModalCarListDescr>
+        </ModalCarItemDescr>
 
-      <h4>Rental Conditions:</h4>
-      <ul>
-        <li>
-          {minAge[0]}:{minAge[1]}
-        </li>
-        {otherConditions.map((credential, idx) => {
-          return <li key={idx}>{credential}</li>;
-        })}
-      </ul>
-      <p>Mileage: {car.mileage}</p>
-      <p>Price: {car.rentalPrice}$</p>
+        <h4>{car.description}</h4>
+        <h4>Accessories and functionalities:</h4>
+        <ModalCarItemDescr>
+          {car.accessories.map((accessory, index) => (
+            <ModalCarListDescr key={index}>{accessory}</ModalCarListDescr>
+          ))}
+          {car.functionalities.map((functionality, index) => (
+            <ModalCarListDescr key={index}>{functionality}</ModalCarListDescr>
+          ))}
+        </ModalCarItemDescr>
 
-      <RentalCar data={'tel:+380730000000'} />
+        <h4>Rental Conditions:</h4>
+        <ModalRentCondItem>
+          <ModalRentCondList>
+            {minAge[0]}:
+            <span style={{ color: '#3470FF', fontWeight: 'bold' }}>
+              {minAge[1]}
+            </span>
+          </ModalRentCondList>
+          {otherConditions.map((credential, idx) => {
+            return (
+              <ModalRentCondList key={idx}>{credential}</ModalRentCondList>
+            );
+          })}
+          <ModalRentCondList>
+            Mileage:
+            <span style={{ color: '#3470FF', fontWeight: 'bold' }}>
+              {car.mileage}
+            </span>
+          </ModalRentCondList>
+          <ModalRentCondList>
+            Price:
+            <span style={{ color: '#3470FF', fontWeight: 'bold' }}>
+              {car.rentalPrice}$
+            </span>
+          </ModalRentCondList>
+        </ModalRentCondItem>
+
+        <RentalCar data={'tel:+380730000000'} />
+      </ModalContainerWrapper>
     </Modal>
   );
 }

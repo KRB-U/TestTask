@@ -7,6 +7,7 @@ export const ContainerWrapper = styled.div`
   /* align-items: center; */
   /* position: relative; */
   width: 274px;
+  margin-right: 20px;
 `;
 
 export const ButtonFav = styled.button`
@@ -40,8 +41,8 @@ export const Img = styled.img`
 export const CarItemTitle = styled.ul`
   display: flex;
 
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 `;
 
 export const CarListTitle = styled.li`
@@ -60,12 +61,14 @@ export const CarListTitle = styled.li`
 export const CarItemDescr = styled.ul`
   display: flex;
   flex-wrap: wrap;
+
+  padding-bottom: 25px;
 `;
 
-export const Delimiter = styled.div`
-  border: 1px;
-  color: rgba(18, 20, 23, 0.1);
-`;
+// export const Delimiter = styled.div`
+//   border: 1px;
+//   color: rgba(18, 20, 23, 0.1);
+// `;
 
 export const CarListDescr = styled.li`
   position: relative;
@@ -77,7 +80,7 @@ export const CarListDescr = styled.li`
     left: 100%;
     transform: translateY(-50%);
     width: 1px;
-    height: 80%;
+    height: 90%;
     background-color: #d9d9d9;
     margin-left: 7px;
   }

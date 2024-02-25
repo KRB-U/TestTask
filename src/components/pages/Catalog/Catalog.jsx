@@ -35,13 +35,17 @@ function Catalog() {
   }, [dispatch]);
 
   return (
-    <ContainerCatalog>
+    <div>
       <CarFilter />
-      {visibleCars.map(car => (
-        <CarCard key={car.id} car={car} />
-      ))}
-      {visibleCars.length <= 32 && <ButtonLoadMore onClick={handleLoadMore} />}
-    </ContainerCatalog>
+      <ContainerCatalog>
+        {visibleCars.map(car => (
+          <CarCard key={car.id} car={car} />
+        ))}
+        {visibleCars.length <= 32 && (
+          <ButtonLoadMore onClick={handleLoadMore} />
+        )}
+      </ContainerCatalog>
+    </div>
   );
 }
 

@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 const CloseButton = styled.button`
-  margin: 0 auto;
-  border: 0;
-  text-decoration: none;
-
+  border: none;
+  background-color: transparent;
+  top: 15px;
+  right: 16px;
   cursor: pointer;
 `;
 
