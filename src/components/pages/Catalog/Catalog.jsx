@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   selectCars,
   selectPagination,
-  selectVisibleCars,
+  // selectVisibleCars,
+  selectorLoading,
 } from 'components/redux/selectors';
 import { getAllCars } from 'components/redux/operations';
 
@@ -16,6 +17,7 @@ import { nextPage } from 'components/redux/CarsSlice';
 function Catalog() {
   const cars = useSelector(selectCars);
   const { page } = useSelector(selectPagination);
+  const isLoading = useSelector(selectorLoading);
 
   // const visibleCars = useSelector(selectVisibleCars);
   // console.log(visibleCars);
@@ -24,7 +26,7 @@ function Catalog() {
 
   const handleLoadMore = () => {
     dispatch(nextPage(1));
-    dispatch(getAllCars());
+    dispatch(getAllCars(page + 1));
   };
 
   useEffect(() => {
