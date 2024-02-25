@@ -1,25 +1,27 @@
 {
   "files": {
     "main.css": "/TestTask/static/css/main.729efda6.css",
-    "main.js": "/TestTask/static/js/main.13a79a45.js",
+    "main.js": "/TestTask/static/js/main.ba27999d.js",
     "static/js/107.9971170c.chunk.js": "/TestTask/static/js/107.9971170c.chunk.js",
-    "static/js/945.186b82cc.chunk.js": "/TestTask/static/js/945.186b82cc.chunk.js",
-    "static/js/840.42d2e16e.chunk.js": "/TestTask/static/js/840.42d2e16e.chunk.js",
+    "static/js/60.4ad41151.chunk.js": "/TestTask/static/js/60.4ad41151.chunk.js",
+    "static/js/840.197337b8.chunk.js": "/TestTask/static/js/840.197337b8.chunk.js",
     "static/js/510.48a9e47c.chunk.js": "/TestTask/static/js/510.48a9e47c.chunk.js",
     "static/js/636.561463dc.chunk.js": "/TestTask/static/js/636.561463dc.chunk.js",
-    "static/js/705.075e8b60.chunk.js": "/TestTask/static/js/705.075e8b60.chunk.js",
+    "static/css/57.ccaa1978.chunk.css": "/TestTask/static/css/57.ccaa1978.chunk.css",
+    "static/js/57.5a0384ac.chunk.js": "/TestTask/static/js/57.5a0384ac.chunk.js",
     "index.html": "/TestTask/index.html",
     "main.729efda6.css.map": "/TestTask/static/css/main.729efda6.css.map",
-    "main.13a79a45.js.map": "/TestTask/static/js/main.13a79a45.js.map",
+    "main.ba27999d.js.map": "/TestTask/static/js/main.ba27999d.js.map",
     "107.9971170c.chunk.js.map": "/TestTask/static/js/107.9971170c.chunk.js.map",
-    "945.186b82cc.chunk.js.map": "/TestTask/static/js/945.186b82cc.chunk.js.map",
-    "840.42d2e16e.chunk.js.map": "/TestTask/static/js/840.42d2e16e.chunk.js.map",
+    "60.4ad41151.chunk.js.map": "/TestTask/static/js/60.4ad41151.chunk.js.map",
+    "840.197337b8.chunk.js.map": "/TestTask/static/js/840.197337b8.chunk.js.map",
     "510.48a9e47c.chunk.js.map": "/TestTask/static/js/510.48a9e47c.chunk.js.map",
     "636.561463dc.chunk.js.map": "/TestTask/static/js/636.561463dc.chunk.js.map",
-    "705.075e8b60.chunk.js.map": "/TestTask/static/js/705.075e8b60.chunk.js.map"
+    "57.ccaa1978.chunk.css.map": "/TestTask/static/css/57.ccaa1978.chunk.css.map",
+    "57.5a0384ac.chunk.js.map": "/TestTask/static/js/57.5a0384ac.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.729efda6.css",
-    "static/js/main.13a79a45.js"
+    "static/js/main.ba27999d.js"
   ]
 }
