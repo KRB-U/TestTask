@@ -45,7 +45,12 @@ function CarCard({ car }) {
       <ButtonFav onClick={checkFavorite}>
         <FavHeart $isFavorite={isFavorite} />
       </ButtonFav>
-      <Img src={car.img || car.photoLink} alt={car.make} />
+      <Img
+        src={car.img || car.photoLink}
+        alt={car.make}
+        width="270px"
+        height="203px"
+      />
       <h3>
         <CarItemTitle>
           <CarListTitle>{car.make}</CarListTitle>
