@@ -1,14 +1,17 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { SearchBtn } from 'components/buttons/Serach/Search';
+
 import filterBrandsOptions from '../../assets/makes.json';
 import filterPricesOptions from '../../assets/price.json';
+
 import { updateFilter } from 'components/redux/CarsSlice';
+
 import { useDispatch } from 'react-redux';
 import { ContainerFilter } from './CarFilter.styled';
-import * as Yup from 'yup';
 
+import * as Yup from 'yup';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { SearchBtn } from 'components/buttons/Serach/Search';
 
 const validationSchema = Yup.object().shape({
   maxMileage: Yup.number()
