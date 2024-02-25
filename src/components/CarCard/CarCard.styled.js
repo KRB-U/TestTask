@@ -30,6 +30,7 @@ export const FavHeart = styled(FaHeart)`
 export const Img = styled.img`
   display: inline-block;
   width: 270px;
+  height: 203px;
   border-radius: 15px;
   background-image: linear-gradient(
     to bottom,
