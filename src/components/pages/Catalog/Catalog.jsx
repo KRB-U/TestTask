@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   selectCars,
   selectPagination,
-  // selectVisibleCars,
+  selectVisibleCars,
   selectorLoading,
 } from 'components/redux/selectors';
 import { getAllCars } from 'components/redux/operations';
@@ -19,27 +19,27 @@ function Catalog() {
   const { page } = useSelector(selectPagination);
   const isLoading = useSelector(selectorLoading);
 
-  // const visibleCars = useSelector(selectVisibleCars);
-  // console.log(visibleCars);
+  const visibleCars = useSelector(selectVisibleCars);
+  console.log(visibleCars);
 
   const dispatch = useDispatch();
 
   const handleLoadMore = () => {
     dispatch(nextPage(1));
-    dispatch(getAllCars(page + 1));
+    dispatch(getAllCars());
   };
 
   useEffect(() => {
-    dispatch(getAllCars(page));
-  }, [dispatch, page]);
+    dispatch(getAllCars());
+  }, [dispatch]);
 
   return (
     <div>
       <CarFilter />
-      {cars.map(car => (
+      {visibleCars.map(car => (
         <CarCard key={car.id} car={car} />
       ))}
-      {cars.length <= 32 && <ButtonLoadMore onClick={handleLoadMore} />}
+      {visibleCars.length <= 32 && <ButtonLoadMore onClick={handleLoadMore} />}
     </div>
   );
 }

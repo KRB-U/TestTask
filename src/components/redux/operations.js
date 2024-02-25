@@ -5,7 +5,7 @@ export const getAllCars = createAsyncThunk(
   'cars/getAllCars',
   async (_, thunkAPI) => {
     const { page } = thunkAPI.getState().cars.pagination;
-
+    console.log(page);
     try {
       const response = await fetchCars(page, 12);
       return response.data;

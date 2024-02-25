@@ -30,8 +30,23 @@ function CarCard({ car }) {
   };
 
   return (
-    <div>
-      <button onClick={checkFavorite}>
+    <div
+      style={{
+        position: 'relative',
+        width: '500px',
+        height: '500px',
+      }}
+    >
+      <button
+        onClick={checkFavorite}
+        style={{
+          border: 'none',
+          backgroundColor: 'transparent',
+          position: 'absolute',
+          top: '15px',
+          right: '16px',
+        }}
+      >
         <FavHeart $isFavorite={isFavorite} />
       </button>
       <img src={car.img || car.photoLink} alt={car.make} />

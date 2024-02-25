@@ -23,8 +23,6 @@ export const selectVisibleCars = createSelector(
       );
     });
 
-    //   state.cars = filteredCars;
-
     return filteredCars;
   }
 );
