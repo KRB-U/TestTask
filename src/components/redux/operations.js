@@ -3,7 +3,9 @@ import { fetchCars } from 'components/helpers/API';
 
 export const getAllCars = createAsyncThunk(
   'cars/getAllCars',
-  async (page, thunkAPI) => {
+  async (_, thunkAPI) => {
+    const { page } = thunkAPI.getState().cars.pagination;
+
     try {
       const response = await fetchCars(page, 12);
       return response.data;

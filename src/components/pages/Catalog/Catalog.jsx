@@ -17,14 +17,14 @@ function Catalog() {
   const cars = useSelector(selectCars);
   const { page } = useSelector(selectPagination);
 
-  const visibleCars = useSelector(selectVisibleCars);
-  console.log(visibleCars);
+  // const visibleCars = useSelector(selectVisibleCars);
+  // console.log(visibleCars);
 
   const dispatch = useDispatch();
 
   const handleLoadMore = () => {
-    dispatch(getAllCars(page + 1));
     dispatch(nextPage(1));
+    dispatch(getAllCars());
   };
 
   useEffect(() => {
