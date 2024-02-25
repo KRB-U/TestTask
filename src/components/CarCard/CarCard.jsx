@@ -51,7 +51,7 @@ function CarCard({ car }) {
           <CarListTitle>{car.make}</CarListTitle>
           <CarListTitle>{car.model}</CarListTitle>
           <CarListTitle>{car.year}</CarListTitle>
-          <CarListTitle>{car.rentalPrice}</CarListTitle>
+          <CarListTitle>${car.rentalPrice}</CarListTitle>
         </CarItemTitle>
       </h3>
 
