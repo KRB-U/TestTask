@@ -79,7 +79,7 @@ function ModalCarDetail({ car, isOpen, closeModal }) {
         <h4>Rental Conditions:</h4>
         <ModalRentCondItem>
           <ModalRentCondList>
-            {minAge[0]}:
+            {minAge[0]}:{' '}
             <span style={{ color: '#3470FF', fontWeight: 'bold' }}>
               {minAge[1]}
             </span>
@@ -90,13 +90,13 @@ function ModalCarDetail({ car, isOpen, closeModal }) {
             );
           })}
           <ModalRentCondList>
-            Mileage:
+            Mileage:{' '}
             <span style={{ color: '#3470FF', fontWeight: 'bold' }}>
               {car.mileage}
             </span>
           </ModalRentCondList>
           <ModalRentCondList>
-            Price:
+            Price:{' '}
             <span style={{ color: '#3470FF', fontWeight: 'bold' }}>
               {car.rentalPrice}$
             </span>
