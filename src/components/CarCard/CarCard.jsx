@@ -6,7 +6,16 @@ import { selectFavorite } from 'components/redux/selectors';
 
 import ModalCarDetail from 'components/Modal/ModalCarDetail';
 import { LearnMore } from 'components/buttons/LearnMore/LearnMore';
-import { FavHeart } from './CarCard.styled';
+import {
+  FavHeart,
+  ButtonFav,
+  Img,
+  ContainerWrapper,
+  CarList,
+  Delimiter,
+  Description,
+  CarItem,
+} from './CarCard.styled';
 
 function CarCard({ car }) {
   const addressParts = car.address.split(',');
@@ -32,43 +41,30 @@ function CarCard({ car }) {
   };
 
   return (
-    <div
-      style={{
-        position: 'relative',
-        width: '500px',
-        height: '500px',
-      }}
-    >
-      <button
-        onClick={checkFavorite}
-        style={{
-          border: 'none',
-          backgroundColor: 'transparent',
-          position: 'absolute',
-          top: '15px',
-          right: '16px',
-        }}
-      >
+    <ContainerWrapper>
+      <ButtonFav onClick={checkFavorite}>
         <FavHeart $isFavorite={isFavorite} />
-      </button>
-      <img src={car.img || car.photoLink} alt={car.make} />
+      </ButtonFav>
+      <Img src={car.img || car.photoLink} alt={car.make} />
       <h3>
-        <ul>
-          <li>{car.make}</li>
-          <li>{car.model}</li>
-          <li>{car.year}</li>
-          <li>{car.rentalPrice}</li>
-        </ul>
+        <CarItem>
+          <CarList>{car.make}</CarList>
+          <CarList>{car.model}</CarList>
+          <CarList>{car.year}</CarList>
+          <CarList>{car.rentalPrice}</CarList>
+        </CarItem>
       </h3>
-      <ul>
+
+      <Description>
         <li>{car.type}</li>
+        <Delimiter></Delimiter>
         <li>{city}</li>
         <li>{country}</li>
         <li>{car.rentalCompany}</li>
         <li>{car.model}</li>
         <li>{car.id}</li>
         <li>{car.functionalities[0]}</li>
-      </ul>
+      </Description>
 
       <LearnMore onClick={() => setShowModal(true)} />
       {showModal && (
@@ -78,7 +74,7 @@ function CarCard({ car }) {
           closeModal={() => setShowModal(false)}
         />
       )}
-    </div>
+    </ContainerWrapper>
   );
 }
 

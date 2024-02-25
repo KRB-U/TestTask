@@ -13,6 +13,7 @@ import CarCard from 'components/CarCard/CarCard';
 import { ButtonLoadMore } from 'components/buttons/LoadMore/LoadMore';
 import { CarFilter } from 'components/CarFilter/CarFilter';
 import { nextPage } from 'components/redux/CarsSlice';
+import { ContainerCatalog } from './Catalog.styled';
 
 function Catalog() {
   // const cars = useSelector(selectCars);
@@ -34,13 +35,13 @@ function Catalog() {
   }, [dispatch]);
 
   return (
-    <div>
+    <ContainerCatalog>
       <CarFilter />
       {visibleCars.map(car => (
         <CarCard key={car.id} car={car} />
       ))}
       {visibleCars.length <= 32 && <ButtonLoadMore onClick={handleLoadMore} />}
-    </div>
+    </ContainerCatalog>
   );
 }
 

@@ -3,6 +3,7 @@ import filterBrandsOptions from '../../assets/makes.json';
 import filterPricesOptions from '../../assets/price.json';
 import { updateFilter } from 'components/redux/CarsSlice';
 import { useDispatch } from 'react-redux';
+import { ContainerFilter } from './CarFilter.styled';
 
 function CarFilter() {
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ function CarFilter() {
         dispatch(updateFilter(values));
       }}
     >
-      <div>
+      <ContainerFilter>
         <Form>
           <label htmlFor="make">Car brand</label>
           <Field as="select" name="make" id="make">
@@ -58,7 +59,7 @@ function CarFilter() {
           </label>
           <button type="submit">Search</button>
         </Form>
-      </div>
+      </ContainerFilter>
     </Formik>
   );
 }

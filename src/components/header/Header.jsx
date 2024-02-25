@@ -1,20 +1,27 @@
-import { NavLinkStld } from './Header.styled';
+import {
+  ContainerWrapper,
+  HeaderItem,
+  HeaderList,
+  NavLinkStld,
+} from './Header.styled';
 
 const Header = () => {
   return (
     <header>
       <nav>
-        <ul>
-          <li>
-            <NavLinkStld to="/">Головна</NavLinkStld>
-          </li>
-          <li>
-            <NavLinkStld to="/catalog">Каталог</NavLinkStld>
-          </li>
-          <li>
-            <NavLinkStld to="/favorites">Улюблені</NavLinkStld>
-          </li>
-        </ul>
+        <ContainerWrapper>
+          <HeaderItem>
+            <HeaderList>
+              <NavLinkStld to="/">Головна</NavLinkStld>
+            </HeaderList>
+            <HeaderList>
+              <NavLinkStld to="/catalog">Каталог</NavLinkStld>
+            </HeaderList>
+            <HeaderList>
+              <NavLinkStld to="/favorites">Улюблені</NavLinkStld>
+            </HeaderList>
+          </HeaderItem>
+        </ContainerWrapper>
       </nav>
     </header>
   );
