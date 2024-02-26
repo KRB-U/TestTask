@@ -1,25 +1,23 @@
 {
   "files": {
-    "main.css": "/TestTask/static/css/main.729efda6.css",
-    "main.js": "/TestTask/static/js/main.6969945f.js",
+    "main.css": "/TestTask/static/css/main.47bb73c7.css",
+    "main.js": "/TestTask/static/js/main.db474b7b.js",
     "static/js/107.9971170c.chunk.js": "/TestTask/static/js/107.9971170c.chunk.js",
-    "static/js/637.fc90e543.chunk.js": "/TestTask/static/js/637.fc90e543.chunk.js",
-    "static/js/113.d4248b70.chunk.js": "/TestTask/static/js/113.d4248b70.chunk.js",
+    "static/js/637.92311598.chunk.js": "/TestTask/static/js/637.92311598.chunk.js",
+    "static/js/113.0b465ac0.chunk.js": "/TestTask/static/js/113.0b465ac0.chunk.js",
     "static/js/510.48a9e47c.chunk.js": "/TestTask/static/js/510.48a9e47c.chunk.js",
-    "static/css/820.cb7e7fa5.chunk.css": "/TestTask/static/css/820.cb7e7fa5.chunk.css",
-    "static/js/820.661c1d09.chunk.js": "/TestTask/static/js/820.661c1d09.chunk.js",
+    "static/js/440.edb966bc.chunk.js": "/TestTask/static/js/440.edb966bc.chunk.js",
     "index.html": "/TestTask/index.html",
-    "main.729efda6.css.map": "/TestTask/static/css/main.729efda6.css.map",
-    "main.6969945f.js.map": "/TestTask/static/js/main.6969945f.js.map",
+    "main.47bb73c7.css.map": "/TestTask/static/css/main.47bb73c7.css.map",
+    "main.db474b7b.js.map": "/TestTask/static/js/main.db474b7b.js.map",
     "107.9971170c.chunk.js.map": "/TestTask/static/js/107.9971170c.chunk.js.map",
-    "637.fc90e543.chunk.js.map": "/TestTask/static/js/637.fc90e543.chunk.js.map",
-    "113.d4248b70.chunk.js.map": "/TestTask/static/js/113.d4248b70.chunk.js.map",
+    "637.92311598.chunk.js.map": "/TestTask/static/js/637.92311598.chunk.js.map",
+    "113.0b465ac0.chunk.js.map": "/TestTask/static/js/113.0b465ac0.chunk.js.map",
     "510.48a9e47c.chunk.js.map": "/TestTask/static/js/510.48a9e47c.chunk.js.map",
-    "820.cb7e7fa5.chunk.css.map": "/TestTask/static/css/820.cb7e7fa5.chunk.css.map",
-    "820.661c1d09.chunk.js.map": "/TestTask/static/js/820.661c1d09.chunk.js.map"
+    "440.edb966bc.chunk.js.map": "/TestTask/static/js/440.edb966bc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.729efda6.css",
-    "static/js/main.6969945f.js"
+    "static/css/main.47bb73c7.css",
+    "static/js/main.db474b7b.js"
   ]
 }
