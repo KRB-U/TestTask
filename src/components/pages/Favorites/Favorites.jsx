@@ -1,4 +1,3 @@
-import { createSelector } from '@reduxjs/toolkit';
 import CarCard from 'components/CarCard/CarCard';
 import { CarFilter } from 'components/CarFilter/CarFilter';
 import { selectFavorite, selectFilters } from 'components/redux/selectors';
