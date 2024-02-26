@@ -1,4 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit';
+// import { toast } from 'react-toastify';
 
 export const selectCars = state => state.cars.cars;
 export const selectFilters = state => state.cars.filters;
@@ -22,6 +23,12 @@ export const selectVisibleCars = createSelector(
         (maxMileage === '' || mileage <= parseInt(maxMileage))
       );
     });
+
+    // if (filteredCars.length === 0) {
+    //   toast.info('Nothing found !', {
+    //     position: 'top-center',
+    //   });
+    // }
 
     return filteredCars;
   }

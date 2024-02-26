@@ -3,6 +3,7 @@ import { CarFilter } from 'components/CarFilter/CarFilter';
 import { selectFavorite, selectFilters } from 'components/redux/selectors';
 import { useSelector } from 'react-redux';
 import { ContainerFavorite } from './Favorites.styled';
+import { toast } from 'react-toastify';
 
 function Favorites() {
   const favorites = useSelector(selectFavorite);
@@ -24,6 +25,12 @@ function Favorites() {
       (maxMileage === '' || mileage <= parseInt(maxMileage))
     );
   });
+
+  if (filteredCars.length === 0) {
+    toast.info('Nothing found !', {
+      position: 'top-center',
+    });
+  }
 
   return (
     <>

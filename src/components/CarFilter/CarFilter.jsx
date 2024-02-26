@@ -10,8 +10,7 @@ import { useDispatch } from 'react-redux';
 import { ContainerFilter } from './CarFilter.styled';
 
 import * as Yup from 'yup';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 
 const validationSchema = Yup.object().shape({
   maxMileage: Yup.number()
@@ -78,7 +77,6 @@ function CarFilter() {
           <ErrorMessage name="maxMileage" render={msg => toast.error(msg)} />
           <SearchBtn />
         </Form>
-        <ToastContainer autoClose={2000} closeOnClick />
       </ContainerFilter>
     </Formik>
   );

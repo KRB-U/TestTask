@@ -2,10 +2,8 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import {
-  // selectCars,
-  // selectPagination,
+  selectPagination,
   selectVisibleCars,
-  // selectorLoading,
 } from 'components/redux/selectors';
 import { getAllCars } from 'components/redux/operations';
 
@@ -16,12 +14,9 @@ import { nextPage } from 'components/redux/CarsSlice';
 import { ContainerCatalog } from './Catalog.styled';
 
 function Catalog() {
-  // const cars = useSelector(selectCars);
-  // const { page } = useSelector(selectPagination);
-  // const isLoading = useSelector(selectorLoading);
+  const { page } = useSelector(selectPagination);
 
   const visibleCars = useSelector(selectVisibleCars);
-  // console.log(visibleCars);
 
   const dispatch = useDispatch();
 
@@ -41,9 +36,7 @@ function Catalog() {
         {visibleCars.map(car => (
           <CarCard key={car.id} car={car} />
         ))}
-        {visibleCars.length <= 32 && (
-          <ButtonLoadMore onClick={handleLoadMore} />
-        )}
+        {page !== 3 && <ButtonLoadMore onClick={handleLoadMore} />}
       </ContainerCatalog>
     </div>
   );
