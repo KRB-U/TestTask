@@ -42,7 +42,24 @@ function CarFilter() {
       <ContainerFilter>
         <Form>
           <label htmlFor="make">Car brand</label>
-          <Field as="select" name="make" id="make">
+          <Field
+            as="select"
+            name="make"
+            id="make"
+            style={{
+              width: '170px',
+              height: '48px',
+              border: 'none',
+              padding: '10px',
+
+              borderRadius: '7px',
+              backgroundColor: '#f7f7fb',
+
+              fontSize: '14px',
+              lineHeight: '20px',
+              fontStyle: 'normal',
+            }}
+          >
             <option value="">Enter the text</option>
             {filterBrandsOptions.map(make => (
               <option key={make} value={make}>
@@ -51,7 +68,24 @@ function CarFilter() {
             ))}
           </Field>
           <label htmlFor="pricePerHour">Price/ 1 hour</label>
-          <Field as="select" name="pricePerHour" id="pricePerHour">
+          <Field
+            as="select"
+            name="pricePerHour"
+            id="pricePerHour"
+            style={{
+              width: '100px',
+              height: '48px',
+              border: 'none',
+              padding: '10px',
+
+              borderRadius: '7px',
+              backgroundColor: '#f7f7fb',
+
+              fontSize: '14px',
+              lineHeight: '20px',
+              fontStyle: 'normal',
+            }}
+          >
             <option value="">To $</option>
             {filterPricesOptions.map(price => (
               <option key={price} value={price}>
@@ -66,12 +100,38 @@ function CarFilter() {
             name="minMileage"
             id="minMileage"
             placeholder="From"
+            style={{
+              width: '100px',
+              height: '28px',
+              border: 'none',
+              padding: '10px',
+
+              borderRadius: '7px',
+              backgroundColor: '#f7f7fb',
+
+              fontSize: '14px',
+              lineHeight: '20px',
+              fontStyle: 'normal',
+            }}
           />
           <Field
             type="number"
             name="maxMileage"
             id="maxMileage"
             placeholder="To"
+            style={{
+              width: '100px',
+              height: '28px',
+              border: 'none',
+              padding: '10px',
+
+              borderRadius: '7px',
+              backgroundColor: '#f7f7fb',
+
+              fontSize: '14px',
+              lineHeight: '20px',
+              fontStyle: 'normal',
+            }}
           />
           <ErrorMessage name="minMileage" render={msg => toast.error(msg)} />
           <ErrorMessage name="maxMileage" render={msg => toast.error(msg)} />
