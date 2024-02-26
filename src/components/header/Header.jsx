@@ -12,13 +12,19 @@ const Header = () => {
         <ContainerWrapper>
           <HeaderItem>
             <HeaderList>
-              <NavLinkStld to="/">Головна</NavLinkStld>
+              <NavLinkStld to="/" activeClassName="active">
+                Головна
+              </NavLinkStld>
             </HeaderList>
             <HeaderList>
-              <NavLinkStld to="/catalog">Каталог</NavLinkStld>
+              <NavLinkStld to="/catalog" activeClassName="active">
+                Каталог
+              </NavLinkStld>
             </HeaderList>
             <HeaderList>
-              <NavLinkStld to="/favorites">Улюблені</NavLinkStld>
+              <NavLinkStld to="/favorites" activeClassName="active">
+                Улюблені
+              </NavLinkStld>
             </HeaderList>
           </HeaderItem>
         </ContainerWrapper>
