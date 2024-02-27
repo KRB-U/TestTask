@@ -102,17 +102,21 @@ function CarFilter() {
           <label htmlFor="Mileage" style={{ position: 'relative' }}>
             <ModalCardFiltrName>Сar mileage / km</ModalCardFiltrName>
             <Field
-              type="number"
+              type="text"
               name="minMileage"
               id="minMileage"
               placeholder="From"
               style={{
-                width: '150px',
-                height: '28px',
+                width: '160px',
+                height: '48px',
                 border: 'none',
-                padding: '10px',
 
-                borderRadius: '7px',
+                borderLeftRadius: '7px',
+                borderTopLeftRadius: '7px',
+                borderBottomLeftRadius: '7px',
+                borderRight: '1px solid #000000',
+
+                padding: '10px',
                 backgroundColor: '#f7f7fb',
 
                 fontSize: '14px',
@@ -122,19 +126,22 @@ function CarFilter() {
             />
           </label>
           <Field
-            type="number"
+            type="text"
             name="maxMileage"
             id="maxMileage"
             placeholder="To"
             style={{
-              width: '150px',
-              height: '28px',
+              width: '160px',
+              height: '48px',
               border: 'none',
+
+              borderRightRadius: '7px',
+              borderTopRightRadius: '7px',
+              borderBottomRightRadius: '7px',
+
               padding: '10px',
 
-              borderRadius: '7px',
               backgroundColor: '#f7f7fb',
-
               fontSize: '14px',
               lineHeight: '20px',
               fontStyle: 'normal',
