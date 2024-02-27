@@ -1,12 +1,14 @@
+import { Description, Heading, HomeContainer } from './Home.stuled';
+
 function Home() {
   return (
-    <div>
-      <h1>Ласкаво просимо до служби оренди автомобілів</h1>
-      <p>
+    <HomeContainer>
+      <Heading>Ласкаво просимо до служби оренди автомобілів</Heading>
+      <Description>
         Ознайомтеся з нашим широким асортиментом автомобілів на прокат і
         знайдіть ідеальний для своїх потреб.
-      </p>
-    </div>
+      </Description>
+    </HomeContainer>
   );
 }
 
