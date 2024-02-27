@@ -48,12 +48,12 @@ function CarFilter() {
               name="make"
               id="make"
               style={{
-                width: '170px',
+                width: '224px',
                 height: '48px',
                 border: 'none',
-                padding: '10px',
+                padding: '14px 89px 14px 18px',
 
-                borderRadius: '7px',
+                borderRadius: '14px',
                 backgroundColor: '#f7f7fb',
 
                 fontSize: '14px',
@@ -77,12 +77,12 @@ function CarFilter() {
               name="pricePerHour"
               id="pricePerHour"
               style={{
-                width: '100px',
+                width: '125px',
                 height: '48px',
                 border: 'none',
-                padding: '10px',
+                padding: '14px 18px',
 
-                borderRadius: '7px',
+                borderRadius: '14px',
                 backgroundColor: '#f7f7fb',
 
                 fontSize: '14px',
@@ -111,10 +111,10 @@ function CarFilter() {
                 height: '48px',
                 border: 'none',
 
-                borderLeftRadius: '7px',
-                borderTopLeftRadius: '7px',
-                borderBottomLeftRadius: '7px',
-                borderRight: '1px solid #000000',
+                borderLeftRadius: '14px',
+                borderTopLeftRadius: '14px',
+                borderBottomLeftRadius: '14px',
+                borderRight: '1px solid gray',
 
                 padding: '10px',
                 backgroundColor: '#f7f7fb',
@@ -135,11 +135,11 @@ function CarFilter() {
               height: '48px',
               border: 'none',
 
-              borderRightRadius: '7px',
-              borderTopRightRadius: '7px',
-              borderBottomRightRadius: '7px',
+              borderRightRadius: '14px',
+              borderTopRightRadius: '14px',
+              borderBottomRightRadius: '14px',
 
-              padding: '10px',
+              padding: '14px 18px',
 
               backgroundColor: '#f7f7fb',
               fontSize: '14px',
