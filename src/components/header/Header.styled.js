@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const ContainerWrapper = styled.div`
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 `;
 
 export const HeaderItem = styled.ul`
@@ -12,11 +12,16 @@ export const HeaderItem = styled.ul`
 `;
 
 export const HeaderList = styled.li`
-  padding-right: 20px;
+  padding-right: 50px;
+
+  &:last-child {
+    padding-right: 0px;
+  }
 `;
 
 export const NavLinkStld = styled(NavLink)`
   text-decoration: none;
+  font-size: 18px;
 
   &.active::after {
     content: '';
