@@ -4,13 +4,13 @@ import styled from 'styled-components';
 export const ListWrapper = styled.li`
   display: flex;
   width: 274px;
-  height: 380px;
+  height: 426px;
   flex-direction: column;
 `;
 
 export const ImgWrapper = styled.div`
   position: relative;
-  margin-bottom: 19px;
+  margin-bottom: 14px;
   width: 274px;
   height: 208px;
 `;
@@ -47,12 +47,17 @@ export const Img = styled.img`
 
 export const CarTitleWrapper = styled.div`
   display: flex;
-  /* justify-content: space-between; */
+  margin-bottom: 28px;
 `;
 
 export const CarTitleInfo = styled.p`
-  margin-bottom: 15px;
+  margin-bottom: 8px;
   padding-right: 10px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #121417;
 
   &:nth-child(2) {
     color: rgba(52, 112, 255, 1);
@@ -72,8 +77,13 @@ export const TitleWrapper = styled.div`
 export const CarTitleDescr = styled.p`
   position: relative;
 
-  margin-right: 6px;
-  margin-bottom: 6px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: rgba(18, 20, 23, 0.5);
+
+  margin-bottom: 4px;
+
   &:not(:last-child)::after {
     content: '';
     position: absolute;
@@ -83,6 +93,7 @@ export const CarTitleDescr = styled.p`
     width: 1px;
     height: 90%;
     background-color: #d9d9d9;
-    margin-left: 6px;
+    margin-left: 7px;
   }
+  margin-right: 15px;
 `;
