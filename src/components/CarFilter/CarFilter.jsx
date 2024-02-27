@@ -7,7 +7,7 @@ import filterPricesOptions from '../../assets/price.json';
 import { updateFilter } from 'components/redux/CarsSlice';
 
 import { useDispatch } from 'react-redux';
-import { ContainerFilter } from './CarFilter.styled';
+import { ContainerFilter, ModalCardFiltrName } from './CarFilter.styled';
 
 import * as Yup from 'yup';
 import { toast } from 'react-toastify';
@@ -42,15 +42,7 @@ function CarFilter() {
       <ContainerFilter>
         <Form>
           <label htmlFor="make" style={{ position: 'relative' }}>
-            <span
-              style={{
-                position: 'absolute',
-                bottom: '38px',
-                left: '0',
-              }}
-            >
-              Car brand
-            </span>
+            <ModalCardFiltrName>Car brand</ModalCardFiltrName>
             <Field
               as="select"
               name="make"
@@ -67,6 +59,7 @@ function CarFilter() {
                 fontSize: '14px',
                 lineHeight: '20px',
                 fontStyle: 'normal',
+                marginRight: '18px',
               }}
             >
               <option value="">Enter the text</option>
@@ -78,15 +71,7 @@ function CarFilter() {
             </Field>
           </label>
           <label htmlFor="pricePerHour" style={{ position: 'relative' }}>
-            <span
-              style={{
-                position: 'absolute',
-                bottom: '38px',
-                left: '0',
-              }}
-            >
-              Price/ 1 hour
-            </span>
+            <ModalCardFiltrName>Price/ 1 hour</ModalCardFiltrName>
             <Field
               as="select"
               name="pricePerHour"
@@ -103,6 +88,7 @@ function CarFilter() {
                 fontSize: '14px',
                 lineHeight: '20px',
                 fontStyle: 'normal',
+                marginRight: '18px',
               }}
             >
               <option value="">To $</option>
@@ -113,34 +99,35 @@ function CarFilter() {
               ))}
             </Field>
           </label>
-          <label htmlFor="Mileage"></label>
-          Сar mileage / km
-          <Field
-            type="number"
-            name="minMileage"
-            id="minMileage"
-            placeholder="From"
-            style={{
-              width: '100px',
-              height: '28px',
-              border: 'none',
-              padding: '10px',
+          <label htmlFor="Mileage" style={{ position: 'relative' }}>
+            <ModalCardFiltrName>Сar mileage / km</ModalCardFiltrName>
+            <Field
+              type="number"
+              name="minMileage"
+              id="minMileage"
+              placeholder="From"
+              style={{
+                width: '150px',
+                height: '28px',
+                border: 'none',
+                padding: '10px',
 
-              borderRadius: '7px',
-              backgroundColor: '#f7f7fb',
+                borderRadius: '7px',
+                backgroundColor: '#f7f7fb',
 
-              fontSize: '14px',
-              lineHeight: '20px',
-              fontStyle: 'normal',
-            }}
-          />
+                fontSize: '14px',
+                lineHeight: '20px',
+                fontStyle: 'normal',
+              }}
+            />
+          </label>
           <Field
             type="number"
             name="maxMileage"
             id="maxMileage"
             placeholder="To"
             style={{
-              width: '100px',
+              width: '150px',
               height: '28px',
               border: 'none',
               padding: '10px',
@@ -151,8 +138,10 @@ function CarFilter() {
               fontSize: '14px',
               lineHeight: '20px',
               fontStyle: 'normal',
+              marginRight: '18px',
             }}
           />
+
           <ErrorMessage name="minMileage" render={msg => toast.error(msg)} />
           <ErrorMessage name="maxMileage" render={msg => toast.error(msg)} />
           <SearchBtn />

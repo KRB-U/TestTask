@@ -8,6 +8,18 @@ export const ContainerFilter = styled.div`
   margin-bottom: 50px;
 `;
 
+export const ModalCardFiltrName = styled.span`
+  position: absolute;
+
+  bottom: 38px;
+  left: 0;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  color: #8a8a89;
+`;
+
 export const FeildBrendStd = styled(Field)`
   width: 170px;
   height: 48px;
