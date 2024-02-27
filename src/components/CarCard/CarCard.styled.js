@@ -37,6 +37,7 @@ export const FavHeart = styled(FaHeart)`
 export const Img = styled.img`
   width: 274px;
   height: 268px;
+  object-fit: cover;
   border-radius: 15px;
   background-image: linear-gradient(
     to bottom,
