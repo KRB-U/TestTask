@@ -18,7 +18,6 @@ export const ImgWrapper = styled.div`
 export const ButtonFav = styled.button`
   display: block;
   position: absolute;
-
   top: 14px;
   right: 14px;
 
@@ -48,15 +47,20 @@ export const Img = styled.img`
 
 export const CarTitleWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 `;
 
 export const CarTitleInfo = styled.p`
-  margin: 0;
   margin-bottom: 15px;
+  padding-right: 10px;
 
   &:nth-child(2) {
     color: rgba(52, 112, 255, 1);
+  }
+
+  &:last-child {
+    margin-left: auto;
+    padding-right: 0px;
   }
 `;
 

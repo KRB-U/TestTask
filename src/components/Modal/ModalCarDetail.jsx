@@ -6,13 +6,41 @@ import {
   ModalCarItemTitle,
   ModalCarListDescr,
   ModalCarListTitle,
-  ModalContainerWrapper,
+  ModalCarListValue,
+  ModalCardDescription,
   ModalImg,
   ModalRentCondItem,
   ModalRentCondList,
+  ModelCardAccessories,
 } from './ModalCarDetail.styled';
 
 Modal.setAppElement('#root');
+
+Modal.defaultStyles = {
+  overlay: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.75)',
+  },
+  content: {
+    maxWidth: '541px',
+    padding: '40px',
+
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%,-50%)',
+
+    background: '#fff',
+    borderRadius: '24px',
+    overflow: 'hidden',
+    WebkitOverflowScrolling: 'touch',
+    outline: 'none',
+  },
+};
 
 function ModalCarDetail({ car, isOpen, closeModal }) {
   const addressParts = car.address.split(',');
@@ -25,25 +53,20 @@ function ModalCarDetail({ car, isOpen, closeModal }) {
 
   const otherConditions = rentalConditions.slice(1);
 
-  const customStyles = {
-    content: {
-      width: '541px',
-      height: '752px',
-      margin: 'auto',
-    },
-  };
-
   return (
     <Modal
       isOpen={isOpen}
       onRequestClose={closeModal}
       contentLabel={car.make}
       ariaHideApp={false}
-      style={customStyles}
     >
-      <ModalContainerWrapper>
+      <div>
         <ClsBtn onClick={closeModal} />
-        <ModalImg src={car.img || car.photoLink} alt={car.make} />
+        <ModalImg
+          src={car.img || car.photoLink}
+          alt={car.make}
+          style={{ position: 'relative' }}
+        />
 
         <h2>
           <ModalCarItemTitle>
@@ -65,8 +88,12 @@ function ModalCarDetail({ car, isOpen, closeModal }) {
           <ModalCarListDescr>Engine Size: {car.engineSize}</ModalCarListDescr>
         </ModalCarItemDescr>
 
-        <h4>{car.description}</h4>
-        <h4>Accessories and functionalities:</h4>
+        <ModalCardDescription>{car.description}</ModalCardDescription>
+
+        <ModelCardAccessories>
+          Accessories and functionalities:
+        </ModelCardAccessories>
+
         <ModalCarItemDescr>
           {car.accessories.map((accessory, index) => (
             <ModalCarListDescr key={index}>{accessory}</ModalCarListDescr>
@@ -79,10 +106,7 @@ function ModalCarDetail({ car, isOpen, closeModal }) {
         <h4>Rental Conditions:</h4>
         <ModalRentCondItem>
           <ModalRentCondList>
-            {minAge[0]}:{' '}
-            <span style={{ color: '#3470FF', fontWeight: 'bold' }}>
-              {minAge[1]}
-            </span>
+            {minAge[0]}: <ModalCarListValue>{minAge[1]}</ModalCarListValue>
           </ModalRentCondList>
           {otherConditions.map((credential, idx) => {
             return (
@@ -90,21 +114,15 @@ function ModalCarDetail({ car, isOpen, closeModal }) {
             );
           })}
           <ModalRentCondList>
-            Mileage:{' '}
-            <span style={{ color: '#3470FF', fontWeight: 'bold' }}>
-              {car.mileage}
-            </span>
+            Mileage: <ModalCarListValue>{car.mileage}</ModalCarListValue>
           </ModalRentCondList>
           <ModalRentCondList>
-            Price:{' '}
-            <span style={{ color: '#3470FF', fontWeight: 'bold' }}>
-              {car.rentalPrice}$
-            </span>
+            Price: <ModalCarListValue>{car.rentalPrice}$</ModalCarListValue>
           </ModalRentCondList>
         </ModalRentCondItem>
 
         <RentalCar data={'tel:+380730000000'} />
-      </ModalContainerWrapper>
+      </div>
     </Modal>
   );
 }

@@ -1,33 +1,32 @@
 import styled from 'styled-components';
 
-export const ModalContainerWrapper = styled.div`
-  width: 500px;
-  /* margin-right: 20px; */
-`;
-
 export const ModalImg = styled.img`
-  /* display: inline-block; */
   width: 461px;
-  border-radius: 10px;
+  height: 248px;
+  border-radius: 1px;
   background-image: linear-gradient(
     to bottom,
     rgba(18, 20, 23, 0.5),
     rgba(18, 20, 23, 0)
   );
+  margin-bottom: 14px;
 `;
 
 export const ModalCarItemTitle = styled.ul`
   display: flex;
-
-  padding-top: 15px;
-  padding-bottom: 15px;
+  margin-bottom: 15px;
 `;
 
 export const ModalCarListTitle = styled.li`
   padding-right: 10px;
 
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 133%;
+  color: #121417;
+
   &:nth-child(2) {
-    color: rgba(52, 112, 255, 1);
+    color: #3470ff;
   }
 `;
 
@@ -35,16 +34,16 @@ export const ModalCarItemDescr = styled.ul`
   display: flex;
   flex-wrap: wrap;
 
-  padding-bottom: 25px;
+  margin-bottom: 25px;
 `;
-
-// export const Delimiter = styled.div`
-//   border: 1px;
-//   color: rgba(18, 20, 23, 0.1);
-// `;
 
 export const ModalCarListDescr = styled.li`
   position: relative;
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: rgba(18, 20, 23, 0.5);
 
   &:not(:last-child)::after {
     content: '';
@@ -57,18 +56,57 @@ export const ModalCarListDescr = styled.li`
     background-color: #d9d9d9;
     margin-left: 7px;
   }
+
   margin-right: 15px;
+`;
+
+export const ModalCardDescription = styled.p`
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 143%;
+  color: #121417;
+  margin-bottom: 24px;
+`;
+
+export const ModelCardAccessories = styled.h4`
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 143%;
+  color: #121417;
+  margin-bottom: 8px;
+`;
+
+export const ModalRentCondTitle = styled.h4`
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 143%;
+  color: #121417;
 `;
 
 export const ModalRentCondItem = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
-  padding-bottom: 20px;
+
+  margin-bottom: 24px;
 `;
 
 export const ModalRentCondList = styled.li`
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #363535;
+
   background-color: #f9f9f9;
   border-radius: 20px;
   padding: 8px;
+`;
+
+export const ModalCarListValue = styled.span`
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  color: #3470ff;
 `;

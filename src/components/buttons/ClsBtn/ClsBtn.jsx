@@ -1,9 +1,9 @@
-import { CloseButton } from './ClsBtn.styled';
+import { CloseButton, CloseIconButton } from './ClsBtn.styled';
 
 function ClsBtn({ onClick }) {
   return (
     <CloseButton onClick={onClick} type="button">
-      X
+      <CloseIconButton />
     </CloseButton>
   );
 }

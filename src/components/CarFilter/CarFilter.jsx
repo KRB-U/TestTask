@@ -41,58 +41,78 @@ function CarFilter() {
     >
       <ContainerFilter>
         <Form>
-          <label htmlFor="make">Car brand</label>
-          <Field
-            as="select"
-            name="make"
-            id="make"
-            style={{
-              width: '170px',
-              height: '48px',
-              border: 'none',
-              padding: '10px',
+          <label htmlFor="make" style={{ position: 'relative' }}>
+            <span
+              style={{
+                position: 'absolute',
+                bottom: '38px',
+                left: '0',
+              }}
+            >
+              Car brand
+            </span>
+            <Field
+              as="select"
+              name="make"
+              id="make"
+              style={{
+                width: '170px',
+                height: '48px',
+                border: 'none',
+                padding: '10px',
 
-              borderRadius: '7px',
-              backgroundColor: '#f7f7fb',
+                borderRadius: '7px',
+                backgroundColor: '#f7f7fb',
 
-              fontSize: '14px',
-              lineHeight: '20px',
-              fontStyle: 'normal',
-            }}
-          >
-            <option value="">Enter the text</option>
-            {filterBrandsOptions.map(make => (
-              <option key={make} value={make}>
-                {make}
-              </option>
-            ))}
-          </Field>
-          <label htmlFor="pricePerHour">Price/ 1 hour</label>
-          <Field
-            as="select"
-            name="pricePerHour"
-            id="pricePerHour"
-            style={{
-              width: '100px',
-              height: '48px',
-              border: 'none',
-              padding: '10px',
+                fontSize: '14px',
+                lineHeight: '20px',
+                fontStyle: 'normal',
+              }}
+            >
+              <option value="">Enter the text</option>
+              {filterBrandsOptions.map(make => (
+                <option key={make} value={make}>
+                  {make}
+                </option>
+              ))}
+            </Field>
+          </label>
+          <label htmlFor="pricePerHour" style={{ position: 'relative' }}>
+            <span
+              style={{
+                position: 'absolute',
+                bottom: '38px',
+                left: '0',
+              }}
+            >
+              Price/ 1 hour
+            </span>
+            <Field
+              as="select"
+              name="pricePerHour"
+              id="pricePerHour"
+              style={{
+                width: '100px',
+                height: '48px',
+                border: 'none',
+                padding: '10px',
 
-              borderRadius: '7px',
-              backgroundColor: '#f7f7fb',
+                borderRadius: '7px',
+                backgroundColor: '#f7f7fb',
 
-              fontSize: '14px',
-              lineHeight: '20px',
-              fontStyle: 'normal',
-            }}
-          >
-            <option value="">To $</option>
-            {filterPricesOptions.map(price => (
-              <option key={price} value={price}>
-                {price}
-              </option>
-            ))}
-          </Field>
+                fontSize: '14px',
+                lineHeight: '20px',
+                fontStyle: 'normal',
+              }}
+            >
+              <option value="">To $</option>
+              {filterPricesOptions.map(price => (
+                <option key={price} value={price}>
+                  {price}
+                </option>
+              ))}
+            </Field>
+          </label>
           <label htmlFor="Mileage"></label>
           Сar mileage / km
           <Field

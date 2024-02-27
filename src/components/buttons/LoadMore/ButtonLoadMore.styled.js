@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
 const BtnLoadMore = styled.button`
-  /* padding: 4px 8px; */
-  border-radius: 5px;
-  background-color: #555555;
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 10px;
+  background-color: transparent;
+
+  padding: 16px;
+
   text-align: center;
-  color: #fff;
+  color: #3470ff;
   border: 0;
   text-decoration: none;
 
@@ -14,14 +15,14 @@ const BtnLoadMore = styled.button`
 
   font-family: inherit;
   font-size: 16px;
-  line-height: 20px;
   font-style: normal;
   font-weight: 400;
-  max-width: 180px;
-  height: 35px;
+
+  text-decoration: none;
 
   &:hover {
-    background-color: rgb(51, 102, 153);
+    color: #0b44cd;
+    transition: color 250ms linear, scale 250ms linear;
   }
 `;
 
