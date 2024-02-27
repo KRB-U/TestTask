@@ -12,7 +12,7 @@ export const ImgWrapper = styled.div`
   position: relative;
   margin-bottom: 14px;
   width: 274px;
-  height: 208px;
+  height: 268px;
 `;
 
 export const ButtonFav = styled.button`
@@ -35,8 +35,8 @@ export const FavHeart = styled(FaHeart)`
 `;
 
 export const Img = styled.img`
-  width: 270px;
-  height: 203px;
+  width: 274px;
+  height: 268px;
   border-radius: 15px;
   background-image: linear-gradient(
     to bottom,
@@ -47,11 +47,10 @@ export const Img = styled.img`
 
 export const CarTitleWrapper = styled.div`
   display: flex;
-  margin-bottom: 28px;
+  margin-bottom: 8px;
 `;
 
 export const CarTitleInfo = styled.p`
-  margin-bottom: 8px;
   padding-right: 10px;
 
   font-weight: 500;

@@ -51,7 +51,7 @@ function CarCard({ car }) {
           src={car.img || car.photoLink}
           alt={car.make}
           width="274px"
-          height="203px"
+          height="268px"
         />
       </ImgWrapper>
       <CarTitleWrapper>
