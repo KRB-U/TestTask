@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
+import { LinkStl, NotFoundText, NotFoundWrapper } from './NotFound.styled';
 
 function NotFound() {
   const navigate = useNavigate();
@@ -22,10 +23,13 @@ function NotFound() {
   }, [seconds, navigate]);
 
   return (
-    <div>
-      Сторінку не знайдено. Перейдіть на <Link to="/">домашню сторінку </Link>
-      або дочекайдеся автоматичного перенаправлення {seconds}
-    </div>
+    <>
+      <NotFoundText>Сторінку не знайдено!</NotFoundText>
+      <NotFoundWrapper>
+        Перейдіть на <LinkStl to="/">домашню сторінку </LinkStl>
+        або дочекайдеся автоматичного перенаправлення {seconds}
+      </NotFoundWrapper>
+    </>
   );
 }
 
