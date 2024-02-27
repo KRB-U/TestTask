@@ -1,21 +1,29 @@
 import { FaHeart } from 'react-icons/fa';
 import styled from 'styled-components';
 
-export const ContainerWrapper = styled.div`
-  /* display: flex; */
-  /* justify-content: center */
-  /* align-items: center; */
-  /* position: relative; */
+export const ListWrapper = styled.li`
+  display: flex;
   width: 274px;
-  margin-right: 20px;
+  height: 380px;
+  flex-direction: column;
+`;
+
+export const ImgWrapper = styled.div`
+  position: relative;
+  margin-bottom: 19px;
+  width: 274px;
+  height: 208px;
 `;
 
 export const ButtonFav = styled.button`
-  /* position: absolute; */
+  display: block;
+  position: absolute;
+
+  top: 14px;
+  right: 14px;
+
   border: none;
   background-color: transparent;
-  top: 15px;
-  right: 16px;
 `;
 
 export const FavHeart = styled(FaHeart)`
@@ -28,7 +36,6 @@ export const FavHeart = styled(FaHeart)`
 `;
 
 export const Img = styled.img`
-  display: inline-block;
   width: 270px;
   height: 203px;
   border-radius: 15px;
@@ -39,41 +46,30 @@ export const Img = styled.img`
   );
 `;
 
-export const CarItemTitle = styled.ul`
+export const CarTitleWrapper = styled.div`
   display: flex;
-
-  padding-top: 15px;
-  padding-bottom: 15px;
+  justify-content: space-between;
 `;
 
-export const CarListTitle = styled.li`
-  padding-right: 10px;
+export const CarTitleInfo = styled.p`
+  margin: 0;
+  margin-bottom: 15px;
 
   &:nth-child(2) {
     color: rgba(52, 112, 255, 1);
   }
-
-  &:last-child {
-    padding-right: 0;
-    margin-left: auto;
-  }
 `;
 
-export const CarItemDescr = styled.ul`
+export const TitleWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-
-  padding-bottom: 25px;
 `;
 
-// export const Delimiter = styled.div`
-//   border: 1px;
-//   color: rgba(18, 20, 23, 0.1);
-// `;
-
-export const CarListDescr = styled.li`
+export const CarTitleDescr = styled.p`
   position: relative;
 
+  margin-right: 6px;
+  margin-bottom: 6px;
   &:not(:last-child)::after {
     content: '';
     position: absolute;
@@ -83,7 +79,6 @@ export const CarListDescr = styled.li`
     width: 1px;
     height: 90%;
     background-color: #d9d9d9;
-    margin-left: 7px;
+    margin-left: 6px;
   }
-  margin-right: 15px;
 `;

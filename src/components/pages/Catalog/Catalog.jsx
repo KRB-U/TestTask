@@ -11,7 +11,7 @@ import CarCard from 'components/CarCard/CarCard';
 import { ButtonLoadMore } from 'components/buttons/LoadMore/LoadMore';
 import { CarFilter } from 'components/CarFilter/CarFilter';
 import { nextPage } from 'components/redux/CarsSlice';
-import { ContainerCatalog } from './Catalog.styled';
+import { CarsItem } from './Catalog.styled';
 
 function Catalog() {
   const { page } = useSelector(selectPagination);
@@ -30,15 +30,15 @@ function Catalog() {
   }, [dispatch]);
 
   return (
-    <div>
+    <>
       <CarFilter />
-      <ContainerCatalog>
+      <CarsItem>
         {visibleCars.map(car => (
           <CarCard key={car.id} car={car} />
         ))}
         {page !== 3 && <ButtonLoadMore onClick={handleLoadMore} />}
-      </ContainerCatalog>
-    </div>
+      </CarsItem>
+    </>
   );
 }
 

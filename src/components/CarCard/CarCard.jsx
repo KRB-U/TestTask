@@ -10,11 +10,12 @@ import {
   FavHeart,
   ButtonFav,
   Img,
-  ContainerWrapper,
-  CarItemTitle,
-  CarListTitle,
-  CarItemDescr,
-  CarListDescr,
+  ImgWrapper,
+  CarTitleWrapper,
+  CarTitleDescr,
+  CarTitleInfo,
+  TitleWrapper,
+  ListWrapper,
 } from './CarCard.styled';
 
 function CarCard({ car }) {
@@ -41,40 +42,34 @@ function CarCard({ car }) {
   };
 
   return (
-    <ContainerWrapper>
-      <ButtonFav onClick={checkFavorite}>
-        <FavHeart $isFavorite={isFavorite} />
-      </ButtonFav>
-      <Img
-        src={car.img || car.photoLink}
-        alt={car.make}
-        width="270px"
-        height="203px"
-      />
-      <h3>
-        <CarItemTitle>
-          <CarListTitle>{car.make}</CarListTitle>
-          <CarListTitle>{car.model}</CarListTitle>
-          <CarListTitle>{car.year}</CarListTitle>
-          <CarListTitle>${car.rentalPrice}</CarListTitle>
-        </CarItemTitle>
-      </h3>
+    <ListWrapper>
+      <ImgWrapper>
+        <ButtonFav onClick={checkFavorite}>
+          <FavHeart $isFavorite={isFavorite} />
+        </ButtonFav>
+        <Img
+          src={car.img || car.photoLink}
+          alt={car.make}
+          width="274px"
+          height="203px"
+        />
+      </ImgWrapper>
+      <CarTitleWrapper>
+        <CarTitleInfo>{car.make}</CarTitleInfo>
+        <CarTitleInfo>{car.model}</CarTitleInfo>
+        <CarTitleInfo>{car.year}</CarTitleInfo>
+        <CarTitleInfo>${car.rentalPrice}</CarTitleInfo>
+      </CarTitleWrapper>
 
-      <CarItemDescr>
-        <CarListDescr>{car.type}</CarListDescr>
-
-        <CarListDescr>{city}</CarListDescr>
-
-        <CarListDescr>{country}</CarListDescr>
-
-        <CarListDescr>{car.rentalCompany}</CarListDescr>
-
-        <CarListDescr>{car.model}</CarListDescr>
-
-        <CarListDescr>{car.id}</CarListDescr>
-
-        <CarListDescr>{car.functionalities[0]}</CarListDescr>
-      </CarItemDescr>
+      <TitleWrapper>
+        <CarTitleDescr>{car.type}</CarTitleDescr>
+        <CarTitleDescr>{city}</CarTitleDescr>
+        <CarTitleDescr>{country}</CarTitleDescr>
+        <CarTitleDescr>{car.rentalCompany}</CarTitleDescr>
+        <CarTitleDescr>{car.model}</CarTitleDescr>
+        <CarTitleDescr>{car.id}</CarTitleDescr>
+        <CarTitleDescr>{car.functionalities[0]}</CarTitleDescr>
+      </TitleWrapper>
 
       <LearnMore onClick={() => setShowModal(true)} />
       {showModal && (
@@ -84,7 +79,7 @@ function CarCard({ car }) {
           closeModal={() => setShowModal(false)}
         />
       )}
-    </ContainerWrapper>
+    </ListWrapper>
   );
 }
 
