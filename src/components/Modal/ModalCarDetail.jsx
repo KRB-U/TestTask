@@ -11,6 +11,7 @@ import {
   ModalImg,
   ModalRentCondItem,
   ModalRentCondList,
+  ModalRentCondTitle,
   ModelCardAccessories,
 } from './ModalCarDetail.styled';
 
@@ -103,7 +104,7 @@ function ModalCarDetail({ car, isOpen, closeModal }) {
           ))}
         </ModalCarItemDescr>
 
-        <h4>Rental Conditions:</h4>
+        <ModalRentCondTitle>Rental Conditions:</ModalRentCondTitle>
         <ModalRentCondItem>
           <ModalRentCondList>
             {minAge[0]}: <ModalCarListValue>{minAge[1]}</ModalCarListValue>

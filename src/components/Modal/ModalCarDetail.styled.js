@@ -81,6 +81,7 @@ export const ModalRentCondTitle = styled.h4`
   font-size: 14px;
   line-height: 143%;
   color: #121417;
+  margin-bottom: 8px;
 `;
 
 export const ModalRentCondItem = styled.ul`
